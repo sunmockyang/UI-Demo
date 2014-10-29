@@ -1,0 +1,36 @@
+/*
+--- z-index ---
+-1: background
+
+*/
+
+
+body{
+	margin: 0;
+}
+
+@font-face {
+    font-family: Terminus;
+    src: url('fonts/TerminusTTF-4.39.ttf') format('truetype');
+}
+
+
+.background{
+	filter: url(blur.svg#blur);
+	position: absolute;
+	width:100%;
+	height:100%;
+	z-index: -1;
+	background: no-repeat center center fixed;
+	background-size: 110%;
+}
+
+.clock{
+	font-family: "Terminus (TTF)", Terminus;
+	font-size: 9pt;
+}
+
+.clock.whole{
+	text-align: right;
+	margin-right:3px;
+}

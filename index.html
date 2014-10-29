@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+</head>
+<body>
+	<div class="background" id="background"></div>
+
+	<div id="clock" class="clock whole">
+		<span class="clock hour">12</span>
+		<span class="clock colon">:</span>
+		<span class="clock minutes">12</span>
+		<span class="clock ampm">pm</span>
+	</div>
+	
+	<script type="text/javascript">
+		function main(){
+			var clock = new UIClock(document.getElementById('clock'));
+			var bg = new UIBackground(document.getElementById('background'));
+		}
+
+		window.onload = main;
+	</script>
+	<script type="text/javascript" src="js/uiclock.js"></script>
+	<script type="text/javascript" src="js/uibg.js"></script>
+</body>
+</html>
