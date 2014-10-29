@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/demo.css">
 </head>
 <body>
+	<div class="window-manager unselectable" id="wManager"></div>
+
 	<div class="background" id="background"></div>
 
 	<div id="clock" class="clock whole">
@@ -14,15 +16,29 @@
 		<span class="clock minutes">12</span>
 		<span class="clock ampm">pm</span>
 	</div>
+
+	<div class="window" id="debugWindow"></div>
 	
 	<script type="text/javascript">
 		function main(){
+			var windowManager = new UIWindowManager(document.getElementById('wManager'));
+
 			var clock = new UIClock(document.getElementById('clock'));
 			var bg = new UIBackground(document.getElementById('background'));
+			var demoWindow = new UIWindow(document.getElementById('debugWindow'));
+
+			windowManager.addWindow(demoWindow);
 		}
 
 		window.onload = main;
 	</script>
+
+	<!-- Libraries -->
+	<script type="text/javascript" src="js/lib/LibraryMouse.min.js"></script>
+
+	<!-- Components -->
+	<script type="text/javascript" src="js/uiwindow.js"></script>
+	<script type="text/javascript" src="js/ui-window-manager.js"></script>
 	<script type="text/javascript" src="js/uiclock.js"></script>
 	<script type="text/javascript" src="js/uibg.js"></script>
 </body>

@@ -1,5 +1,6 @@
 /*
 --- z-index ---
+ 1: window-manager;
 -1: background
 
 */
@@ -14,15 +15,45 @@ body{
     src: url('fonts/TerminusTTF-4.39.ttf') format('truetype');
 }
 
+/* General */
+.unselectable{
+	user-select: none;
+}
+
+.window{
+	position: absolute;
+	margin:0;
+}
+
+/* Components */
+
+#debugWindow{
+	background-color: rgba(255, 0, 0, 0.5);
+	width: 100px;
+	height: 100px;
+}
 
 .background{
 	filter: url(blur.svg#blur);
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
 	position: absolute;
 	width:100%;
 	height:100%;
 	z-index: -1;
 	background: no-repeat center center fixed;
-	background-size: 110%;
+	background-size: cover;
+}
+
+
+.window-manager{
+	position: absolute;
+	width:100%;
+	height:100%;
+	z-index: 1;
+	font-family: "Terminus (TTF)", Terminus;
+	font-size: 9pt;
 }
 
 .clock{
